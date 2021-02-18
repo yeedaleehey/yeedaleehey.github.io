@@ -109,6 +109,11 @@
                   if(result.length == 1 && occupied[result[0]] == 1){
                      return true;
                   }
+                  console.log(parseFloat($(this).find("input")[1].value))
+                  if(result.length == 1 && isNaN(parseFloat($(this).find("input")[1].value))){
+                     $(this).css("background-color", "red");
+                     return true;
+                  }
                   
                },
                stop: function(event, ui) { 
@@ -129,6 +134,9 @@
                      pos = $(item).offset();
                   });
                   console.log("current_number: " + $(this).data("current_number"));
+                  if(isNaN(parseFloat($(this).find("input")[1].value))){
+                     return;
+                  }
                   if(result.length == 0){
                      if($(this).data("current_number") == "1" || $(this).data("current_number") == "3" || $(this).data("current_number") == "5" || $(this).data("current_number") == "7" || $(this).data("current_number") == "9" || $(this).data("current_number") == "11") {
                         document.getElementById("leftWeight").value = parseFloat(document.getElementById("leftWeight").value) - parseFloat($(this).find("input")[1].value);
