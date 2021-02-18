@@ -113,14 +113,9 @@
             }
          });
 		});
-      function snapToMiddle(dragger, target){
-         var topMove = target.position().top - dragger.data('position').top + (target.outerHeight(true) - dragger.outerHeight(true)) / 2;
-         var leftMove= target.position().left - dragger.data('position').left + (target.outerWidth(true) - dragger.outerWidth(true)) / 2;
-         dragger.animate({top:topMove,left:leftMove},{duration:600,easing:'easeOutBack'});
-      }
 
-      $('li.ui-state-default').on( 'click', 'input', function () {    
-         $(this).focus();
+      $('input').bind('click.sortable mousedown.sortable',function(ev){
+        ev.target.focus();
       });
 
 		</script>
@@ -224,7 +219,7 @@
          </div>
           <div class="square">
 		      <input value="郭佬"></input>
-		      <input type="tel" value="320"></input>
+		      <input type="tel" value="80"></input>
 		    </div>
 	</body>
 </html>
