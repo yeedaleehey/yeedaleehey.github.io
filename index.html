@@ -63,8 +63,6 @@
 			$(".square").draggable({
 				snap: ".squaredotted",
 				snapMode: "inner",
-            snapTolerance: 30,
-
 				stop: function(event, ui) { 
 					/* Get the possible snap targets: */
 					var snapped = $(this).data('ui-draggable').snapElements;
@@ -121,7 +119,7 @@
          dragger.animate({top:topMove,left:leftMove},{duration:600,easing:'easeOutBack'});
       }
 
-     $("input").draggable({ cancel: null });
+     $(":input").draggable({ cancel: null });
 
 		</script>
 	</head>
@@ -224,7 +222,7 @@
          </div>
           <div class="square">
 		      <input value="郭佬"></input>
-		      <input type="tel" value="70"></input>
+		      <input type="tel" value="10"></input>
 		    </div>
 	</body>
 </html>
