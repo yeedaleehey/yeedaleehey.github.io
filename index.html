@@ -4,6 +4,7 @@
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 		<script type="text/javascript" src="https://code.jquery.com/ui/1.9.2/jquery-ui.js"></script>
 		<script src="jquery.ui.touch-punch.min.js"></script>
+      <meta name="viewport" content="width=device-width,initial-scale=1.0">
 		<!-- CSS -->
 		<style type="text/css">
 		.square {
@@ -132,7 +133,7 @@
                            console.log("3");
                            if(occupied[result[0]] == 0){
                               occupied[result[0]] = 1;
-                              $(this).css("background-color", "blue");
+                              $(this).css("background-color", "lightyellow");
                               console.log("occupied[" + occupied[result[0]] + "] = " + occupied[result[0]]);
                               document.getElementById("leftWeight").value = parseFloat(document.getElementById("leftWeight").value) + parseFloat($(this).find("input")[1].value);
                               $(this).data("current_number", result[0]);
@@ -144,7 +145,7 @@
                         if(result[0] == "2" || result[0] == "4" || result[0] == "6" || result[0] == "8" || result[0] == "10" || result[0] == "12") {
                            console.log("4");
                            if(occupied[result[0]] == 0){
-                              $(this).css("background-color", "blue");
+                              $(this).css("background-color", "lightyellow");
                               document.getElementById("rightWeight").value = parseFloat(document.getElementById("rightWeight").value) + parseFloat($(this).find("input")[1].value);
                               occupied[result[0]] = 1;
                               $(this).data("current_number", result[0]);
@@ -155,7 +156,7 @@
                      }else if((result[0] == "2" || result[0] == "4" || result[0] == "6" || result[0] == "8" || result[0] == "10" || result[0] == "12") && ($(this).data("current_number") == "1" || $(this).data("current_number") == "3" || $(this).data("current_number") == "5" || $(this).data("current_number") == "7" || $(this).data("current_number") == "9" || $(this).data("current_number") == "11")){
                         console.log("5");
                         if(occupied[result[0]] == 0){
-                           $(this).css("background-color", "blue");
+                           $(this).css("background-color", "lightyellow");
                            occupied[parseInt($(this).data("current_number"))] = 0;
                            occupied[result[0]] = 1;
                            document.getElementById("leftWeight").value = parseFloat(document.getElementById("leftWeight").value) - parseFloat($(this).find("input")[1].value);
@@ -167,7 +168,7 @@
                      }else if((result[0] == "1" || result[0] == "3" || result[0] == "5" || result[0] == "7" || result[0] == "9" || result[0] == "11") && ($(this).data("current_number") == "2" || $(this).data("current_number") == "4" || $(this).data("current_number") == "6" || $(this).data("current_number") == "8" || $(this).data("current_number") == "10" || $(this).data("current_number") == "12")){
                         console.log("6");
                         if(occupied[result[0]] == 0){
-                           $(this).css("background-color", "blue");
+                           $(this).css("background-color", "lightyellow");
                            document.getElementById("rightWeight").value = parseFloat(document.getElementById("rightWeight").value) - parseFloat($(this).find("input")[1].value);
                            document.getElementById("leftWeight").value = parseFloat(document.getElementById("leftWeight").value) + parseFloat($(this).find("input")[1].value);
                            occupied[result[0]] = 1;
@@ -179,7 +180,7 @@
                      }else if((result[0] == "1" || result[0] == "3" || result[0] == "5" || result[0] == "7" || result[0] == "9" || result[0] == "11") && ($(this).data("current_number") == "1" || $(this).data("current_number") == "3" || $(this).data("current_number") == "5" || $(this).data("current_number") == "7" || $(this).data("current_number") == "9" || $(this).data("current_number") == "11")){
                         console.log("7");
                         if(occupied[result[0]] == 0){
-                           $(this).css("background-color", "blue");
+                           $(this).css("background-color", "lightyellow");
                            occupied[result[0]] = 1;
                            occupied[parseInt($(this).data("current_number"))] = 0;
                            $(this).data("current_number", result[0]);
@@ -189,7 +190,7 @@
                      }else if((result[0] == "2" || result[0] == "4" || result[0] == "6" || result[0] == "8" || result[0] == "10" || result[0] == "12") && ($(this).data("current_number") == "2" || $(this).data("current_number") == "4" || $(this).data("current_number") == "6" || $(this).data("current_number") == "8" || $(this).data("current_number") == "10" || $(this).data("current_number") == "12")){
                         console.log("8");
                         if(occupied[result[0]] == 0){
-                           $(this).css("background-color", "blue");
+                           $(this).css("background-color", "lightyellow");
                            occupied[parseInt($(this).data("current_number"))] = 0;
                            occupied[result[0]] = 1;
                            $(this).data("current_number", result[0]);
