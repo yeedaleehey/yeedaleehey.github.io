@@ -236,6 +236,10 @@
                console.log("New value " + current);
                console.log("current_number: " + $(this).parent("div").data("current_number"));
                console.log($(this).parent("div"));
+               if(isNaN(parseFloat(current))){
+                  current = 0;
+                  $(this).prop("value", "0");
+               }
                if($(this).parent("div").data("current_number") == "1" || $(this).parent("div").data("current_number") == "3" || $(this).parent("div").data("current_number") == "5" || $(this).parent("div").data("current_number") == "7" || $(this).parent("div").data("current_number") == "9" || $(this).parent("div").data("current_number") == "11") {
                   document.getElementById("leftWeight").value = parseFloat(document.getElementById("leftWeight").value) + parseFloat(current) - parseFloat(prev);
                }
@@ -257,116 +261,116 @@
          <div style="clear:both"></div>
          <div class="square">
 		      <input style="width: 70px; margin-top: 5px;text-align: center;" placeholder="姓名" value="郭佬"></input>
-		      <input style="width: 70px; margin-top: 5px;text-align: center;" type="number" id="weight_input" placeholder="體重"  value="80"></input>
+		      <input style="width: 70px; margin-top: 5px;text-align: center;" type="text" id="weight_input" placeholder="體重"  value="80"></input>
 		    </div>
           <div class="blank"></div>
 		    <div class="squaredotted">1</div>
           <div class="blank"></div>
           <div class="square">
 		      <input style="width: 70px; margin-top: 5px;text-align: center;" placeholder="姓名"></input>
-		      <input style="width: 70px; margin-top: 5px;text-align: center;" type="number" id="weight_input" placeholder="體重"></input>
+		      <input style="width: 70px; margin-top: 5px;text-align: center;" type="text" id="weight_input" placeholder="體重"></input>
 		    </div>
           <div class="blank"></div>
 		    <div class="squaredotted">2</div>
           <div class="blank"></div>
           <div class="square">
 		      <input style="width: 70px; margin-top: 5px;text-align: center;" placeholder="姓名"></input>
-		      <input style="width: 70px; margin-top: 5px;text-align: center;" type="number" id="weight_input" placeholder="體重"></input>
+		      <input style="width: 70px; margin-top: 5px;text-align: center;" type="text" id="weight_input" placeholder="體重"></input>
 		    </div>
 		    <div style="clear:both"></div>
           <div class="square">
 		      <input style="width: 70px; margin-top: 5px;text-align: center;" placeholder="姓名"></input>
-		      <input style="width: 70px; margin-top: 5px;text-align: center;" type="number" id="weight_input" placeholder="體重"></input>
+		      <input style="width: 70px; margin-top: 5px;text-align: center;" type="text" id="weight_input" placeholder="體重"></input>
 		    </div>
           <div class="blank"></div>
 		    <div class="squaredotted">3</div>
           <div class="blank"></div>
           <div class="square">
 		      <input style="width: 70px; margin-top: 5px;text-align: center;" placeholder="姓名"></input>
-		      <input style="width: 70px; margin-top: 5px;text-align: center;" type="number" id="weight_input" placeholder="體重"></input>
+		      <input style="width: 70px; margin-top: 5px;text-align: center;" type="text" id="weight_input" placeholder="體重"></input>
 		    </div>
           <div class="blank"></div>
 		    <div class="squaredotted">4</div>
           <div class="blank"></div>
           <div class="square">
 		      <input style="width: 70px; margin-top: 5px;text-align: center;" placeholder="姓名"></input>
-		      <input style="width: 70px; margin-top: 5px;text-align: center;" type="number" id="weight_input" placeholder="體重"></input>
+		      <input style="width: 70px; margin-top: 5px;text-align: center;" type="text" id="weight_input" placeholder="體重"></input>
 		    </div>
 		    <div style="clear:both"></div>
           <div class="square">
 		      <input style="width: 70px; margin-top: 5px;text-align: center;" placeholder="姓名"></input>
-		      <input style="width: 70px; margin-top: 5px;text-align: center;" type="number" id="weight_input" placeholder="體重"></input>
+		      <input style="width: 70px; margin-top: 5px;text-align: center;" type="text" id="weight_input" placeholder="體重"></input>
 		    </div>
           <div class="blank"></div>
 		    <div class="squaredotted">5</div>
           <div class="blank"></div>
           <div class="square">
 		      <input style="width: 70px; margin-top: 5px;text-align: center;" placeholder="姓名"></input>
-		      <input style="width: 70px; margin-top: 5px;text-align: center;" type="number" id="weight_input" placeholder="體重"></input>
+		      <input style="width: 70px; margin-top: 5px;text-align: center;" type="text" id="weight_input" placeholder="體重"></input>
 		    </div>
           <div class="blank"></div>
 		    <div class="squaredotted">6</div>
           <div class="blank"></div>
           <div class="square">
 		      <input style="width: 70px; margin-top: 5px;text-align: center;" placeholder="姓名"></input>
-		      <input style="width: 70px; margin-top: 5px;text-align: center;" type="number" id="weight_input" placeholder="體重"></input>
+		      <input style="width: 70px; margin-top: 5px;text-align: center;" type="text" id="weight_input" placeholder="體重"></input>
 		    </div>
 		    <div style="clear:both"></div>
           <div class="square">
 		      <input style="width: 70px; margin-top: 5px;text-align: center;" placeholder="姓名"></input>
-		      <input style="width: 70px; margin-top: 5px;text-align: center;" type="number" id="weight_input" placeholder="體重"></input>
+		      <input style="width: 70px; margin-top: 5px;text-align: center;" type="text" id="weight_input" placeholder="體重"></input>
 		    </div>
           <div class="blank"></div>
 		    <div class="squaredotted">7</div>
           <div class="blank"></div>
           <div class="square">
 		      <input style="width: 70px; margin-top: 5px;text-align: center;" placeholder="姓名"></input>
-		      <input style="width: 70px; margin-top: 5px;text-align: center;" type="number" id="weight_input" placeholder="體重"></input>
+		      <input style="width: 70px; margin-top: 5px;text-align: center;" type="text" id="weight_input" placeholder="體重"></input>
 		    </div>
           <div class="blank"></div>
 		    <div class="squaredotted">8</div>
           <div class="blank"></div>
           <div class="square">
 		      <input style="width: 70px; margin-top: 5px;text-align: center;" placeholder="姓名"></input>
-		      <input style="width: 70px; margin-top: 5px;text-align: center;" type="number" id="weight_input" placeholder="體重"></input>
+		      <input style="width: 70px; margin-top: 5px;text-align: center;" type="text" id="weight_input" placeholder="體重"></input>
 		    </div>
 		    <div style="clear:both"></div>
           <div class="square">
 		      <input style="width: 70px; margin-top: 5px;text-align: center;" placeholder="姓名"></input>
-		      <input style="width: 70px; margin-top: 5px;text-align: center;" type="number" id="weight_input" placeholder="體重"></input>
+		      <input style="width: 70px; margin-top: 5px;text-align: center;" type="text" id="weight_input" placeholder="體重"></input>
 		    </div>
           <div class="blank"></div>
 		    <div class="squaredotted">9</div>
           <div class="blank"></div>
           <div class="square">
 		      <input style="width: 70px; margin-top: 5px;text-align: center;" placeholder="姓名"></input>
-		      <input style="width: 70px; margin-top: 5px;text-align: center;" type="number" id="weight_input" placeholder="體重"></input>
+		      <input style="width: 70px; margin-top: 5px;text-align: center;" type="text" id="weight_input" placeholder="體重"></input>
 		    </div>
           <div class="blank"></div>
 		    <div class="squaredotted">10</div>
           <div class="blank"></div>
           <div class="square">
 		      <input style="width: 70px; margin-top: 5px;text-align: center;" placeholder="姓名"></input>
-		      <input style="width: 70px; margin-top: 5px;text-align: center;" type="number" id="weight_input" placeholder="體重"></input>
+		      <input style="width: 70px; margin-top: 5px;text-align: center;" type="text" id="weight_input" placeholder="體重"></input>
 		    </div>
 		    <div style="clear:both"></div>
           <div class="square">
 		      <input style="width: 70px; margin-top: 5px;text-align: center;" placeholder="姓名"></input>
-		      <input style="width: 70px; margin-top: 5px;text-align: center;" type="number" id="weight_input" placeholder="體重"></input>
+		      <input style="width: 70px; margin-top: 5px;text-align: center;" type="text" id="weight_input" placeholder="體重"></input>
 		    </div>
           <div class="blank"></div>
 		    <div class="squaredotted">11</div>
           <div class="blank"></div>
           <div class="square">
 		      <input style="width: 70px; margin-top: 5px;text-align: center;" placeholder="姓名"></input>
-		      <input style="width: 70px; margin-top: 5px;text-align: center;" type="number" id="weight_input" placeholder="體重"></input>
+		      <input style="width: 70px; margin-top: 5px;text-align: center;" type="text" id="weight_input" placeholder="體重"></input>
 		    </div>
           <div class="blank"></div>
 		    <div class="squaredotted">12</div>
           <div class="blank"></div>
           <div class="square">
 		      <input style="width: 70px; margin-top: 5px;text-align: center;" placeholder="姓名"></input>
-		      <input style="width: 70px; margin-top: 5px;text-align: center;" type="number" id="weight_input" placeholder="體重"></input>
+		      <input style="width: 70px; margin-top: 5px;text-align: center;" type="text" id="weight_input" placeholder="體重"></input>
 		    </div>
          </div>
 	</body>
