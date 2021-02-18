@@ -59,6 +59,17 @@
 
 		<!-- Javascript -->
 		<script>
+         let detectTap = false;
+
+         $('body').on('touchstart', '#sortableMenu input', () => {
+         detectTap = true;
+         });
+         $('body').on('touchmove', '#sortableMenu input', () => {
+         detectTap = false;
+         });
+         $('body').on('touchend', '#sortableMenu input', (e) => {
+         if (detectTap) $(e.target).focus();
+         });
 		$(function () {
 			$(".square").draggable({
 				snap: ".squaredotted",
@@ -215,7 +226,7 @@
          </div>
           <div class="square">
 		      <input value="郭佬"></input>
-		      <input type="tel" value="80"></input>
+		      <input type="tel" value="8210"></input>
 		    </div>
 	</body>
 </html>
