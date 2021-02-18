@@ -119,7 +119,9 @@
          dragger.animate({top:topMove,left:leftMove},{duration:600,easing:'easeOutBack'});
       }
 
-     $(":input").draggable({ cancel: null });
+      $('li.ui-state-default').on( 'click', 'input', function () {    
+         $(this).focus();
+      });
 
 		</script>
 	</head>
@@ -222,7 +224,7 @@
          </div>
           <div class="square">
 		      <input value="郭佬"></input>
-		      <input type="tel" value="10"></input>
+		      <input type="tel" value="320"></input>
 		    </div>
 	</body>
 </html>
