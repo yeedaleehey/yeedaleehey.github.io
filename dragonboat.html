@@ -176,10 +176,13 @@
                   if(result.length == 0){
                      if(isOddString($(this).data("current_number"))) {
                         document.getElementById("leftWeight").value = parseFloat(document.getElementById("leftWeight").value) - parseFloat($(this).find("input")[1].value);
+                        document.getElementById("totalWeight").value = parseFloat(document.getElementById("leftWeight").value) + parseFloat(document.getElementById("rightWeight").value);
                         console.log("1");
                      }
                      if(isEvenString($(this).data("current_number"))) {
                         document.getElementById("rightWeight").value = parseFloat(document.getElementById("rightWeight").value) - parseFloat($(this).find("input")[1].value);
+                        document.getElementById("totalWeight").value = parseFloat(document.getElementById("leftWeight").value) + parseFloat(document.getElementById("rightWeight").value);
+
                         console.log("2");
                      }
                      $(this).css("background-color", "lightblue");
@@ -194,6 +197,7 @@
                               $(this).css("background-color", "lightyellow");
                               console.log("occupied[" + occupied[result[0]] + "] = " + occupied[result[0]]);
                               document.getElementById("leftWeight").value = parseFloat(document.getElementById("leftWeight").value) + parseFloat($(this).find("input")[1].value);
+                              document.getElementById("totalWeight").value = parseFloat(document.getElementById("leftWeight").value) + parseFloat(document.getElementById("rightWeight").value);
                               $(this).data("current_number", result[0]);
                               $(this).offset({'top' : pos.top});
                               $(this).offset({'left' : pos.left});
@@ -205,6 +209,7 @@
                            if(occupied[result[0]] == 0){
                               $(this).css("background-color", "lightyellow");
                               document.getElementById("rightWeight").value = parseFloat(document.getElementById("rightWeight").value) + parseFloat($(this).find("input")[1].value);
+                              document.getElementById("totalWeight").value = parseFloat(document.getElementById("leftWeight").value) + parseFloat(document.getElementById("rightWeight").value);
                               occupied[result[0]] = 1;
                               $(this).data("current_number", result[0]);
                               $(this).offset({'top' : pos.top});
@@ -219,6 +224,7 @@
                            occupied[result[0]] = 1;
                            document.getElementById("leftWeight").value = parseFloat(document.getElementById("leftWeight").value) - parseFloat($(this).find("input")[1].value);
                            document.getElementById("rightWeight").value = parseFloat(document.getElementById("rightWeight").value) + parseFloat($(this).find("input")[1].value);
+                           document.getElementById("totalWeight").value = parseFloat(document.getElementById("leftWeight").value) + parseFloat(document.getElementById("rightWeight").value);
                            $(this).data("current_number", result[0]);
                            $(this).offset({'top' : pos.top});
                            $(this).offset({'left' : pos.left});
@@ -229,6 +235,7 @@
                            $(this).css("background-color", "lightyellow");
                            document.getElementById("rightWeight").value = parseFloat(document.getElementById("rightWeight").value) - parseFloat($(this).find("input")[1].value);
                            document.getElementById("leftWeight").value = parseFloat(document.getElementById("leftWeight").value) + parseFloat($(this).find("input")[1].value);
+                           document.getElementById("totalWeight").value = parseFloat(document.getElementById("leftWeight").value) + parseFloat(document.getElementById("rightWeight").value);
                            occupied[result[0]] = 1;
                            occupied[parseInt($(this).data("current_number"))] = 0;
                            $(this).data("current_number", result[0]);
@@ -283,9 +290,11 @@
                }
                if(isOddString($(this).parent("div").data("current_number"))) {
                   document.getElementById("leftWeight").value = parseFloat(document.getElementById("leftWeight").value) + parseFloat(current) - parseFloat(prev);
+                  document.getElementById("totalWeight").value = parseFloat(document.getElementById("leftWeight").value) + parseFloat(document.getElementById("rightWeight").value);
                }
                if(isEvenString($(this).parent("div").data("current_number"))) {
                   document.getElementById("rightWeight").value = parseFloat(document.getElementById("rightWeight").value) + parseFloat(current) - parseFloat(prev);
+                  document.getElementById("totalWeight").value = parseFloat(document.getElementById("leftWeight").value) + parseFloat(document.getElementById("rightWeight").value);
                }
                $(this).parent("div").draggable( 'enable' );
             });
@@ -304,7 +313,13 @@
        </nav>
        <div class="position-relative overflow-hidden p-3 p-md-5 m-md-3 text-center bg-light">
          <div class="container">
-
+            <div class="row justify-content-md-center">
+               <input readonly="readonly" style="width: 230px;text-align: center;background: transparent;border: none; font-size: 35;" value="總重"></input>
+            </div>
+   
+            <div class="row justify-content-md-center">
+               <input id="totalWeight" readonly="readonly" style="width: 230px;text-align: center;background: transparent;border: none; font-size: 35;" value=0></input>
+            </div>
             <div class="row justify-content-md-center">
                <input readonly="readonly" style="width: 230px;text-align: center;background: transparent;border: none; font-size: 35;" value="左列總重"></input>
                <input readonly="readonly" style="width: 230px;text-align: center;background: transparent;border: none; font-size: 35;" value="右列總重"></input>
