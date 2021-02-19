@@ -8,7 +8,36 @@
       <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 		<script type="text/javascript" src="https://code.jquery.com/ui/1.9.2/jquery-ui.js"></script>
 		<script src="jquery.ui.touch-punch.min.js"></script>
-
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+      <meta name="description" content="">
+      <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+      <meta name="generator" content="Jekyll v4.1.1">
+      <title>Product example · Bootstrap</title>
+  
+      <link rel="canonical" href="https://getbootstrap.com/docs/4.5/examples/product/">
+  
+      <!-- Bootstrap core CSS -->
+      <link href="../assets/dist/css/bootstrap.min.css" rel="stylesheet">
+  
+      <style>
+        .bd-placeholder-img {
+          font-size: 1.125rem;
+          text-anchor: middle;
+          -webkit-user-select: none;
+          -moz-user-select: none;
+          -ms-user-select: none;
+          user-select: none;
+        }
+  
+        @media (min-width: 768px) {
+          .bd-placeholder-img-lg {
+            font-size: 3.5rem;
+          }
+        }
+      </style>
+      <!-- Custom styles for this template -->
+      <link href="product.css" rel="stylesheet">
 		<!-- CSS -->
 		<style type="text/css">
 		.square {
@@ -39,25 +68,25 @@
           width: 30px;
 		    height: 80px;
 		    line-height: 80px;
-		    border: 1px white;
+		    border: 1px (0,0,0,0);
 		    margin-bottom: 50px;
 		    margin-left: 5px;
 		    text-align: center;
 		    float: left;
-		    color: white;
-		    background-color: white;
+		    color: (0,0,0,0);
+		    background-color: (0,0,0,0);
 		}
       .blank_small {
 		    width: 20px;
 		    height: 20px;
 		    line-height: 80px;
-		    border: 1px white;
+		    border: 1px (0,0,0,0);
 		    margin-bottom: 20px;
 		    margin-left: 49px;
 		    text-align: center;
 		    float: left;
-		    color: white;
-		    background-color: white;
+		    color: (0,0,0,0);
+		    background-color: (0,0,0,0);
 		}
       .screen {
          font-size: 0.5em;
@@ -117,6 +146,9 @@
                   console.log(parseFloat($(this).find("input")[1].value))
                   if(result.length == 1 && isNaN(parseFloat($(this).find("input")[1].value))){
                      $(this).css("background-color", "red");
+                     return true;
+                  }
+                  if(result.length > 1){
                      return true;
                   }
                   
@@ -262,225 +294,241 @@
       </script>
 	</head>
 	<body>
-      <div class="container">
-         <div class="row justify-content-md-center">
-            <input readonly="readonly" style="text-align: center;background: transparent;border: none; font-size: 50;" value="龍舟排槳位小工具"></input>
+      <nav class="site-header sticky-top py-1">
+         <div class="container d-flex flex-column flex-md-row d-flex justify-content-between">
+            <a class="py-2" href="#" aria-label="Product">
+               <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="d-block mx-auto" role="img" viewBox="0 0 24 24" focusable="false"><title>Product</title><circle cx="12" cy="12" r="10"/><path d="M14.31 8l5.74 9.94M9.69 8h11.48M7.38 12l5.74-9.94M9.69 16L3.95 6.06M14.31 16H2.83m13.79-4l-5.74 9.94"/></svg>
+             </a>
+             <a class="py-2 d-none d-md-inline-block" href="#">龍舟排槳位小工具</a>
+             <a class="py-2 d-none d-md-inline-block" href="#">About</a>
          </div>
+       </nav>
+       <div class="position-relative overflow-hidden p-3 p-md-5 m-md-3 text-center bg-light">
+         <div class="container">
 
-         <div class="row justify-content-md-center">
-            <input id="leftWeight" readonly="readonly" style="width: 230px;text-align: center;background: transparent;border: none; font-size: 35;" value=0></input>
-            <input id="rightWeight" readonly="readonly" style="width: 230px;text-align: center;background: transparent;border: none; font-size: 35;" value=0></input>
+            <div class="row justify-content-md-center">
+               <input readonly="readonly" style="width: 230px;text-align: center;background: transparent;border: none; font-size: 35;" value="左列總重"></input>
+               <input readonly="readonly" style="width: 230px;text-align: center;background: transparent;border: none; font-size: 35;" value="右列總重"></input>
+            </div>
+   
+            <div class="row justify-content-md-center">
+               <input id="leftWeight" readonly="readonly" style="width: 230px;text-align: center;background: transparent;border: none; font-size: 35;" value=0></input>
+               <input id="rightWeight" readonly="readonly" style="width: 230px;text-align: center;background: transparent;border: none; font-size: 35;" value=0></input>
+            </div>
+   
+            <div class="row justify-content-md-center">
+               <div class="square">
+                  <input style="height: 20px; width: 70px; margin-top: 5px;text-align: center;" placeholder="姓名" value="郭佬"></input>
+                  <input style="height: 20px; width: 70px; margin-top: 5px;text-align: center;" type="text" id="weight_input" placeholder="體重" value="80"></input>
+               </div>
+               <div class="blank"></div>
+               <div class="squaredotted">1</div>
+               <div class="blank"></div>
+               <div class="square">
+                  <input style="height: 20px; width: 70px; margin-top: 5px;text-align: center;" placeholder="姓名"></input>
+                  <input style="height: 20px; width: 70px; margin-top: 5px;text-align: center;" type="text" id="weight_input" placeholder="體重"></input>
+               </div>
+               <div class="blank"></div>
+               <div class="squaredotted">2</div>
+               <div class="blank"></div>
+               <div class="square">
+                  <input style="height: 20px; width: 70px; margin-top: 5px;text-align: center;" placeholder="姓名"></input>
+                  <input style="height: 20px; width: 70px; margin-top: 5px;text-align: center;" type="text" id="weight_input" placeholder="體重"></input>
+               </div>
+            </div>
+   
+            <div class="row justify-content-md-center">
+               <div class="square">
+                  <input style="height: 20px; width: 70px; margin-top: 5px;text-align: center;" placeholder="姓名"></input>
+                  <input style="height: 20px; width: 70px; margin-top: 5px;text-align: center;" type="text" id="weight_input" placeholder="體重"></input>
+               </div>
+               <div class="blank"></div>
+               <div class="squaredotted">3</div>
+               <div class="blank"></div>
+               <div class="square">
+                  <input style="height: 20px; width: 70px; margin-top: 5px;text-align: center;" placeholder="姓名"></input>
+                  <input style="height: 20px; width: 70px; margin-top: 5px;text-align: center;" type="text" id="weight_input" placeholder="體重"></input>
+               </div>
+               <div class="blank"></div>
+               <div class="squaredotted">4</div>
+               <div class="blank"></div>
+               <div class="square">
+                  <input style="height: 20px; width: 70px; margin-top: 5px;text-align: center;" placeholder="姓名"></input>
+                  <input style="height: 20px; width: 70px; margin-top: 5px;text-align: center;" type="text" id="weight_input" placeholder="體重"></input>
+               </div>
+            </div>
+   
+            <div class="row justify-content-md-center">
+               <div class="square">
+                  <input style="height: 20px; width: 70px; margin-top: 5px;text-align: center;" placeholder="姓名"></input>
+                  <input style="height: 20px; width: 70px; margin-top: 5px;text-align: center;" type="text" id="weight_input" placeholder="體重"></input>
+               </div>
+               <div class="blank"></div>
+               <div class="squaredotted">5</div>
+               <div class="blank"></div>
+               <div class="square">
+                  <input style="height: 20px; width: 70px; margin-top: 5px;text-align: center;" placeholder="姓名"></input>
+                  <input style="height: 20px; width: 70px; margin-top: 5px;text-align: center;" type="text" id="weight_input" placeholder="體重"></input>
+               </div>
+               <div class="blank"></div>
+               <div class="squaredotted">6</div>
+               <div class="blank"></div>
+               <div class="square">
+                  <input style="height: 20px; width: 70px; margin-top: 5px;text-align: center;" placeholder="姓名"></input>
+                  <input style="height: 20px; width: 70px; margin-top: 5px;text-align: center;" type="text" id="weight_input" placeholder="體重"></input>
+               </div>
+            </div>
+   
+            <div class="row justify-content-md-center">
+               <div class="square">
+                  <input style="height: 20px; width: 70px; margin-top: 5px;text-align: center;" placeholder="姓名"></input>
+                  <input style="height: 20px; width: 70px; margin-top: 5px;text-align: center;" type="text" id="weight_input" placeholder="體重"></input>
+               </div>
+               <div class="blank"></div>
+               <div class="squaredotted">7</div>
+               <div class="blank"></div>
+               <div class="square">
+                  <input style="height: 20px; width: 70px; margin-top: 5px;text-align: center;" placeholder="姓名"></input>
+                  <input style="height: 20px; width: 70px; margin-top: 5px;text-align: center;" type="text" id="weight_input" placeholder="體重"></input>
+               </div>
+               <div class="blank"></div>
+               <div class="squaredotted">8</div>
+               <div class="blank"></div>
+               <div class="square">
+                  <input style="height: 20px; width: 70px; margin-top: 5px;text-align: center;" placeholder="姓名"></input>
+                  <input style="height: 20px; width: 70px; margin-top: 5px;text-align: center;" type="text" id="weight_input" placeholder="體重"></input>
+               </div>
+            </div>
+   
+            <div class="row justify-content-md-center">
+               <div class="square">
+                  <input style="height: 20px; width: 70px; margin-top: 5px;text-align: center;" placeholder="姓名"></input>
+                  <input style="height: 20px; width: 70px; margin-top: 5px;text-align: center;" type="text" id="weight_input" placeholder="體重"></input>
+               </div>
+               <div class="blank"></div>
+               <div class="squaredotted">9</div>
+               <div class="blank"></div>
+               <div class="square">
+                  <input style="height: 20px; width: 70px; margin-top: 5px;text-align: center;" placeholder="姓名"></input>
+                  <input style="height: 20px; width: 70px; margin-top: 5px;text-align: center;" type="text" id="weight_input" placeholder="體重"></input>
+               </div>
+               <div class="blank"></div>
+               <div class="squaredotted">10</div>
+               <div class="blank"></div>
+               <div class="square">
+                  <input style="height: 20px; width: 70px; margin-top: 5px;text-align: center;" placeholder="姓名"></input>
+                  <input style="height: 20px; width: 70px; margin-top: 5px;text-align: center;" type="text" id="weight_input" placeholder="體重"></input>
+               </div>
+            </div>
+   
+            <div class="row justify-content-md-center">
+               <div class="square">
+                  <input style="height: 20px; width: 70px; margin-top: 5px;text-align: center;" placeholder="姓名"></input>
+                  <input style="height: 20px; width: 70px; margin-top: 5px;text-align: center;" type="text" id="weight_input" placeholder="體重"></input>
+               </div>
+               <div class="blank"></div>
+               <div class="squaredotted">11</div>
+               <div class="blank"></div>
+               <div class="square">
+                  <input style="height: 20px; width: 70px; margin-top: 5px;text-align: center;" placeholder="姓名"></input>
+                  <input style="height: 20px; width: 70px; margin-top: 5px;text-align: center;" type="text" id="weight_input" placeholder="體重"></input>
+               </div>
+               <div class="blank"></div>
+               <div class="squaredotted">12</div>
+               <div class="blank"></div>
+               <div class="square">
+                  <input style="height: 20px; width: 70px; margin-top: 5px;text-align: center;" placeholder="姓名"></input>
+                  <input style="height: 20px; width: 70px; margin-top: 5px;text-align: center;" type="text" id="weight_input" placeholder="體重"></input>
+               </div>
+            </div>
+   
+            <div class="row justify-content-md-center">
+               <div class="square">
+                  <input style="height: 20px; width: 70px; margin-top: 5px;text-align: center;" placeholder="姓名"></input>
+                  <input style="height: 20px; width: 70px; margin-top: 5px;text-align: center;" type="text" id="weight_input" placeholder="體重"></input>
+               </div>
+               <div class="blank"></div>
+               <div class="squaredotted">13</div>
+               <div class="blank"></div>
+               <div class="square">
+                  <input style="height: 20px; width: 70px; margin-top: 5px;text-align: center;" placeholder="姓名"></input>
+                  <input style="height: 20px; width: 70px; margin-top: 5px;text-align: center;" type="text" id="weight_input" placeholder="體重"></input>
+               </div>
+               <div class="blank"></div>
+               <div class="squaredotted">14</div>
+               <div class="blank"></div>
+               <div class="square">
+                  <input style="height: 20px; width: 70px; margin-top: 5px;text-align: center;" placeholder="姓名"></input>
+                  <input style="height: 20px; width: 70px; margin-top: 5px;text-align: center;" type="text" id="weight_input" placeholder="體重"></input>
+               </div>
+            </div>
+   
+            <div class="row justify-content-md-center">
+               <div class="square">
+                  <input style="height: 20px; width: 70px; margin-top: 5px;text-align: center;" placeholder="姓名"></input>
+                  <input style="height: 20px; width: 70px; margin-top: 5px;text-align: center;" type="text" id="weight_input" placeholder="體重"></input>
+               </div>
+               <div class="blank"></div>
+               <div class="squaredotted">15</div>
+               <div class="blank"></div>
+               <div class="square">
+                  <input style="height: 20px; width: 70px; margin-top: 5px;text-align: center;" placeholder="姓名"></input>
+                  <input style="height: 20px; width: 70px; margin-top: 5px;text-align: center;" type="text" id="weight_input" placeholder="體重"></input>
+               </div>
+               <div class="blank"></div>
+               <div class="squaredotted">16</div>
+               <div class="blank"></div>
+               <div class="square">
+                  <input style="height: 20px; width: 70px; margin-top: 5px;text-align: center;" placeholder="姓名"></input>
+                  <input style="height: 20px; width: 70px; margin-top: 5px;text-align: center;" type="text" id="weight_input" placeholder="體重"></input>
+               </div>
+            </div>
+   
+            <div class="row justify-content-md-center">
+               <div class="square">
+                  <input style="height: 20px; width: 70px; margin-top: 5px;text-align: center;" placeholder="姓名"></input>
+                  <input style="height: 20px; width: 70px; margin-top: 5px;text-align: center;" type="text" id="weight_input" placeholder="體重"></input>
+               </div>
+               <div class="blank"></div>
+               <div class="squaredotted">17</div>
+               <div class="blank"></div>
+               <div class="square">
+                  <input style="height: 20px; width: 70px; margin-top: 5px;text-align: center;" placeholder="姓名"></input>
+                  <input style="height: 20px; width: 70px; margin-top: 5px;text-align: center;" type="text" id="weight_input" placeholder="體重"></input>
+               </div>
+               <div class="blank"></div>
+               <div class="squaredotted">18</div>
+               <div class="blank"></div>
+               <div class="square">
+                  <input style="height: 20px; width: 70px; margin-top: 5px;text-align: center;" placeholder="姓名"></input>
+                  <input style="height: 20px; width: 70px; margin-top: 5px;text-align: center;" type="text" id="weight_input" placeholder="體重"></input>
+               </div>
+            </div>
+   
+            <div class="row justify-content-md-center">
+               <div class="square">
+                  <input style="height: 20px; width: 70px; margin-top: 5px;text-align: center;" placeholder="姓名"></input>
+                  <input style="height: 20px; width: 70px; margin-top: 5px;text-align: center;" type="text" id="weight_input" placeholder="體重"></input>
+               </div>
+               <div class="blank"></div>
+               <div class="squaredotted">19</div>
+               <div class="blank"></div>
+               <div class="square">
+                  <input style="height: 20px; width: 70px; margin-top: 5px;text-align: center;" placeholder="姓名"></input>
+                  <input style="height: 20px; width: 70px; margin-top: 5px;text-align: center;" type="text" id="weight_input" placeholder="體重"></input>
+               </div>
+               <div class="blank"></div>
+               <div class="squaredotted">20</div>
+               <div class="blank"></div>
+               <div class="square">
+                  <input style="height: 20px; width: 70px; margin-top: 5px;text-align: center;" placeholder="姓名"></input>
+                  <input style="height: 20px; width: 70px; margin-top: 5px;text-align: center;" type="text" id="weight_input" placeholder="體重"></input>
+               </div>
+            </div>
          </div>
-
-         <div class="row justify-content-md-center">
-            <div class="square">
-               <input style="width: 70px; margin-top: 5px;text-align: center;" placeholder="姓名" value="郭佬"></input>
-               <input style="width: 70px; margin-top: 5px;text-align: center;" type="text" id="weight_input" placeholder="體重" value="80"></input>
-            </div>
-            <div class="blank"></div>
-            <div class="squaredotted">1</div>
-            <div class="blank"></div>
-            <div class="square">
-               <input style="width: 70px; margin-top: 5px;text-align: center;" placeholder="姓名"></input>
-               <input style="width: 70px; margin-top: 5px;text-align: center;" type="text" id="weight_input" placeholder="體重"></input>
-            </div>
-            <div class="blank"></div>
-            <div class="squaredotted">2</div>
-            <div class="blank"></div>
-            <div class="square">
-               <input style="width: 70px; margin-top: 5px;text-align: center;" placeholder="姓名"></input>
-               <input style="width: 70px; margin-top: 5px;text-align: center;" type="text" id="weight_input" placeholder="體重"></input>
-            </div>
-         </div>
-
-         <div class="row justify-content-md-center">
-            <div class="square">
-               <input style="width: 70px; margin-top: 5px;text-align: center;" placeholder="姓名"></input>
-               <input style="width: 70px; margin-top: 5px;text-align: center;" type="text" id="weight_input" placeholder="體重"></input>
-            </div>
-            <div class="blank"></div>
-            <div class="squaredotted">3</div>
-            <div class="blank"></div>
-            <div class="square">
-               <input style="width: 70px; margin-top: 5px;text-align: center;" placeholder="姓名"></input>
-               <input style="width: 70px; margin-top: 5px;text-align: center;" type="text" id="weight_input" placeholder="體重"></input>
-            </div>
-            <div class="blank"></div>
-            <div class="squaredotted">4</div>
-            <div class="blank"></div>
-            <div class="square">
-               <input style="width: 70px; margin-top: 5px;text-align: center;" placeholder="姓名"></input>
-               <input style="width: 70px; margin-top: 5px;text-align: center;" type="text" id="weight_input" placeholder="體重"></input>
-            </div>
-         </div>
-
-         <div class="row justify-content-md-center">
-            <div class="square">
-               <input style="width: 70px; margin-top: 5px;text-align: center;" placeholder="姓名"></input>
-               <input style="width: 70px; margin-top: 5px;text-align: center;" type="text" id="weight_input" placeholder="體重"></input>
-            </div>
-            <div class="blank"></div>
-            <div class="squaredotted">5</div>
-            <div class="blank"></div>
-            <div class="square">
-               <input style="width: 70px; margin-top: 5px;text-align: center;" placeholder="姓名"></input>
-               <input style="width: 70px; margin-top: 5px;text-align: center;" type="text" id="weight_input" placeholder="體重"></input>
-            </div>
-            <div class="blank"></div>
-            <div class="squaredotted">6</div>
-            <div class="blank"></div>
-            <div class="square">
-               <input style="width: 70px; margin-top: 5px;text-align: center;" placeholder="姓名"></input>
-               <input style="width: 70px; margin-top: 5px;text-align: center;" type="text" id="weight_input" placeholder="體重"></input>
-            </div>
-         </div>
-
-         <div class="row justify-content-md-center">
-            <div class="square">
-               <input style="width: 70px; margin-top: 5px;text-align: center;" placeholder="姓名"></input>
-               <input style="width: 70px; margin-top: 5px;text-align: center;" type="text" id="weight_input" placeholder="體重"></input>
-            </div>
-            <div class="blank"></div>
-            <div class="squaredotted">7</div>
-            <div class="blank"></div>
-            <div class="square">
-               <input style="width: 70px; margin-top: 5px;text-align: center;" placeholder="姓名"></input>
-               <input style="width: 70px; margin-top: 5px;text-align: center;" type="text" id="weight_input" placeholder="體重"></input>
-            </div>
-            <div class="blank"></div>
-            <div class="squaredotted">8</div>
-            <div class="blank"></div>
-            <div class="square">
-               <input style="width: 70px; margin-top: 5px;text-align: center;" placeholder="姓名"></input>
-               <input style="width: 70px; margin-top: 5px;text-align: center;" type="text" id="weight_input" placeholder="體重"></input>
-            </div>
-         </div>
-
-         <div class="row justify-content-md-center">
-            <div class="square">
-               <input style="width: 70px; margin-top: 5px;text-align: center;" placeholder="姓名"></input>
-               <input style="width: 70px; margin-top: 5px;text-align: center;" type="text" id="weight_input" placeholder="體重"></input>
-            </div>
-            <div class="blank"></div>
-            <div class="squaredotted">9</div>
-            <div class="blank"></div>
-            <div class="square">
-               <input style="width: 70px; margin-top: 5px;text-align: center;" placeholder="姓名"></input>
-               <input style="width: 70px; margin-top: 5px;text-align: center;" type="text" id="weight_input" placeholder="體重"></input>
-            </div>
-            <div class="blank"></div>
-            <div class="squaredotted">10</div>
-            <div class="blank"></div>
-            <div class="square">
-               <input style="width: 70px; margin-top: 5px;text-align: center;" placeholder="姓名"></input>
-               <input style="width: 70px; margin-top: 5px;text-align: center;" type="text" id="weight_input" placeholder="體重"></input>
-            </div>
-         </div>
-
-         <div class="row justify-content-md-center">
-            <div class="square">
-               <input style="width: 70px; margin-top: 5px;text-align: center;" placeholder="姓名"></input>
-               <input style="width: 70px; margin-top: 5px;text-align: center;" type="text" id="weight_input" placeholder="體重"></input>
-            </div>
-            <div class="blank"></div>
-            <div class="squaredotted">11</div>
-            <div class="blank"></div>
-            <div class="square">
-               <input style="width: 70px; margin-top: 5px;text-align: center;" placeholder="姓名"></input>
-               <input style="width: 70px; margin-top: 5px;text-align: center;" type="text" id="weight_input" placeholder="體重"></input>
-            </div>
-            <div class="blank"></div>
-            <div class="squaredotted">12</div>
-            <div class="blank"></div>
-            <div class="square">
-               <input style="width: 70px; margin-top: 5px;text-align: center;" placeholder="姓名"></input>
-               <input style="width: 70px; margin-top: 5px;text-align: center;" type="text" id="weight_input" placeholder="體重"></input>
-            </div>
-         </div>
-
-         <div class="row justify-content-md-center">
-            <div class="square">
-               <input style="width: 70px; margin-top: 5px;text-align: center;" placeholder="姓名"></input>
-               <input style="width: 70px; margin-top: 5px;text-align: center;" type="text" id="weight_input" placeholder="體重"></input>
-            </div>
-            <div class="blank"></div>
-            <div class="squaredotted">13</div>
-            <div class="blank"></div>
-            <div class="square">
-               <input style="width: 70px; margin-top: 5px;text-align: center;" placeholder="姓名"></input>
-               <input style="width: 70px; margin-top: 5px;text-align: center;" type="text" id="weight_input" placeholder="體重"></input>
-            </div>
-            <div class="blank"></div>
-            <div class="squaredotted">14</div>
-            <div class="blank"></div>
-            <div class="square">
-               <input style="width: 70px; margin-top: 5px;text-align: center;" placeholder="姓名"></input>
-               <input style="width: 70px; margin-top: 5px;text-align: center;" type="text" id="weight_input" placeholder="體重"></input>
-            </div>
-         </div>
-
-         <div class="row justify-content-md-center">
-            <div class="square">
-               <input style="width: 70px; margin-top: 5px;text-align: center;" placeholder="姓名"></input>
-               <input style="width: 70px; margin-top: 5px;text-align: center;" type="text" id="weight_input" placeholder="體重"></input>
-            </div>
-            <div class="blank"></div>
-            <div class="squaredotted">15</div>
-            <div class="blank"></div>
-            <div class="square">
-               <input style="width: 70px; margin-top: 5px;text-align: center;" placeholder="姓名"></input>
-               <input style="width: 70px; margin-top: 5px;text-align: center;" type="text" id="weight_input" placeholder="體重"></input>
-            </div>
-            <div class="blank"></div>
-            <div class="squaredotted">16</div>
-            <div class="blank"></div>
-            <div class="square">
-               <input style="width: 70px; margin-top: 5px;text-align: center;" placeholder="姓名"></input>
-               <input style="width: 70px; margin-top: 5px;text-align: center;" type="text" id="weight_input" placeholder="體重"></input>
-            </div>
-         </div>
-
-         <div class="row justify-content-md-center">
-            <div class="square">
-               <input style="width: 70px; margin-top: 5px;text-align: center;" placeholder="姓名"></input>
-               <input style="width: 70px; margin-top: 5px;text-align: center;" type="text" id="weight_input" placeholder="體重"></input>
-            </div>
-            <div class="blank"></div>
-            <div class="squaredotted">17</div>
-            <div class="blank"></div>
-            <div class="square">
-               <input style="width: 70px; margin-top: 5px;text-align: center;" placeholder="姓名"></input>
-               <input style="width: 70px; margin-top: 5px;text-align: center;" type="text" id="weight_input" placeholder="體重"></input>
-            </div>
-            <div class="blank"></div>
-            <div class="squaredotted">18</div>
-            <div class="blank"></div>
-            <div class="square">
-               <input style="width: 70px; margin-top: 5px;text-align: center;" placeholder="姓名"></input>
-               <input style="width: 70px; margin-top: 5px;text-align: center;" type="text" id="weight_input" placeholder="體重"></input>
-            </div>
-         </div>
-
-         <div class="row justify-content-md-center">
-            <div class="square">
-               <input style="width: 70px; margin-top: 5px;text-align: center;" placeholder="姓名"></input>
-               <input style="width: 70px; margin-top: 5px;text-align: center;" type="text" id="weight_input" placeholder="體重"></input>
-            </div>
-            <div class="blank"></div>
-            <div class="squaredotted">19</div>
-            <div class="blank"></div>
-            <div class="square">
-               <input style="width: 70px; margin-top: 5px;text-align: center;" placeholder="姓名"></input>
-               <input style="width: 70px; margin-top: 5px;text-align: center;" type="text" id="weight_input" placeholder="體重"></input>
-            </div>
-            <div class="blank"></div>
-            <div class="squaredotted">20</div>
-            <div class="blank"></div>
-            <div class="square">
-               <input style="width: 70px; margin-top: 5px;text-align: center;" placeholder="姓名"></input>
-               <input style="width: 70px; margin-top: 5px;text-align: center;" type="text" id="weight_input" placeholder="體重"></input>
-            </div>
-         </div>
-      </div>
+       </div>
+       <div class="position-relative overflow-hidden p-3 p-md-5 m-md-3 text-center bg-light">
+         <a href="https://hits.seeyoufarm.com"><img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fyeedaleehey.github.io&count_bg=%2379C83D&title_bg=%23555555&icon=github.svg&icon_color=%23E7E7E7&title=hits&edge_flat=false"/></a>
+       </div>
 	</body>
 </html>
