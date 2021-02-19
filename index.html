@@ -28,7 +28,7 @@
 		    margin-left: 0px;
 		    text-align: center;
 		    float: left;
-		    color: gray;
+		    color: lightgray;
 		    background-color: lightgray;
 		}
       .blank {
@@ -249,7 +249,7 @@
                   document.getElementById("leftWeight").value = parseFloat(document.getElementById("leftWeight").value) + parseFloat(current) - parseFloat(prev);
                }
                if($(this).parent("div").data("current_number") == "2" || $(this).parent("div").data("current_number") == "4" || $(this).parent("div").data("current_number") == "6" || $(this).parent("div").data("current_number") == "8" || $(this).parent("div").data("current_number") == "10" || $(this).parent("div").data("current_number") == "12") {
-                  document.getElementById("rightWeight").value = parseFloat(document.getElementById("leftWeight").value) + parseFloat(current) - parseFloat(prev);
+                  document.getElementById("rightWeight").value = parseFloat(document.getElementById("rightWeight").value) + parseFloat(current) - parseFloat(prev);
                }
                $(this).parent("div").draggable( 'enable' );
             });
