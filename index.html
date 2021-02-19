@@ -229,6 +229,10 @@
                $(this).data('val', $(this).val());
                $(this).parent("div").draggable( 'disable' );
             });
+            $("input[id='weight_input']").on('focusout', function(){
+               $(this).parent("div").draggable( 'enable' );
+            });
+
 
             $("input[id='weight_input']").change(function() {
                var prev = $(this).data('val');
