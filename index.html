@@ -74,9 +74,10 @@
 		<!-- Javascript -->
 
       <script type="text/javascript">
-
          $( document ).ready(function() {
-               var occupied = new Array(100).fill(0);;
+            function isOddString(num) { return parseInt(num) % 2;}
+            function isEvenString(num) { return (parseInt(num) + 1) % 2;}
+            var occupied = new Array(100).fill(0);
             let detectTap = false;
 
             $('body').on('touchstart', '#sortableMenu input', () => {
@@ -138,11 +139,11 @@
                      return;
                   }
                   if(result.length == 0){
-                     if($(this).data("current_number") == "1" || $(this).data("current_number") == "3" || $(this).data("current_number") == "5" || $(this).data("current_number") == "7" || $(this).data("current_number") == "9" || $(this).data("current_number") == "11") {
+                     if(isOddString($(this).data("current_number"))) {
                         document.getElementById("leftWeight").value = parseFloat(document.getElementById("leftWeight").value) - parseFloat($(this).find("input")[1].value);
                         console.log("1");
                      }
-                     if($(this).data("current_number") == "2" || $(this).data("current_number") == "4" || $(this).data("current_number") == "6" || $(this).data("current_number") == "8" || $(this).data("current_number") == "10" || $(this).data("current_number") == "12") {
+                     if(isEvenString($(this).data("current_number"))) {
                         document.getElementById("rightWeight").value = parseFloat(document.getElementById("rightWeight").value) - parseFloat($(this).find("input")[1].value);
                         console.log("2");
                      }
@@ -151,7 +152,7 @@
                      $(this).data("current_number", 0);
                   }else if (result.length == 1) {
                      if($(this).data("current_number") == undefined || $(this).data("current_number") == 0) {
-                        if(result[0] == "1" || result[0] == "3" || result[0] == "5" || result[0] == "7" || result[0] == "9" || result[0] == "11") {
+                        if(isOddString(result[0])) {
                            console.log("3");
                            if(occupied[result[0]] == 0){
                               occupied[result[0]] = 1;
@@ -164,7 +165,7 @@
                               console.log(pos)
                            }
                         }
-                        if(result[0] == "2" || result[0] == "4" || result[0] == "6" || result[0] == "8" || result[0] == "10" || result[0] == "12") {
+                        if(isEvenString(result[0])) {
                            console.log("4");
                            if(occupied[result[0]] == 0){
                               $(this).css("background-color", "lightyellow");
@@ -175,7 +176,7 @@
                               $(this).offset({'left' : pos.left});
                            }
                         }
-                     }else if((result[0] == "2" || result[0] == "4" || result[0] == "6" || result[0] == "8" || result[0] == "10" || result[0] == "12") && ($(this).data("current_number") == "1" || $(this).data("current_number") == "3" || $(this).data("current_number") == "5" || $(this).data("current_number") == "7" || $(this).data("current_number") == "9" || $(this).data("current_number") == "11")){
+                     }else if(isEvenString(result[0]) && isOddString($(this).data("current_number"))){
                         console.log("5");
                         if(occupied[result[0]] == 0){
                            $(this).css("background-color", "lightyellow");
@@ -187,7 +188,7 @@
                            $(this).offset({'top' : pos.top});
                            $(this).offset({'left' : pos.left});
                         }
-                     }else if((result[0] == "1" || result[0] == "3" || result[0] == "5" || result[0] == "7" || result[0] == "9" || result[0] == "11") && ($(this).data("current_number") == "2" || $(this).data("current_number") == "4" || $(this).data("current_number") == "6" || $(this).data("current_number") == "8" || $(this).data("current_number") == "10" || $(this).data("current_number") == "12")){
+                     }else if(isOddString(result[0]) && isEvenString($(this).data("current_number"))){
                         console.log("6");
                         if(occupied[result[0]] == 0){
                            $(this).css("background-color", "lightyellow");
@@ -199,7 +200,7 @@
                            $(this).offset({'top' : pos.top});
                            $(this).offset({'left' : pos.left});
                         }
-                     }else if((result[0] == "1" || result[0] == "3" || result[0] == "5" || result[0] == "7" || result[0] == "9" || result[0] == "11") && ($(this).data("current_number") == "1" || $(this).data("current_number") == "3" || $(this).data("current_number") == "5" || $(this).data("current_number") == "7" || $(this).data("current_number") == "9" || $(this).data("current_number") == "11")){
+                     }else if(isOddString(result[0]) && isOddString($(this).data("current_number"))){
                         console.log("7");
                         if(occupied[result[0]] == 0){
                            $(this).css("background-color", "lightyellow");
@@ -209,7 +210,7 @@
                            $(this).offset({'top' : pos.top});
                            $(this).offset({'left' : pos.left});
                         }
-                     }else if((result[0] == "2" || result[0] == "4" || result[0] == "6" || result[0] == "8" || result[0] == "10" || result[0] == "12") && ($(this).data("current_number") == "2" || $(this).data("current_number") == "4" || $(this).data("current_number") == "6" || $(this).data("current_number") == "8" || $(this).data("current_number") == "10" || $(this).data("current_number") == "12")){
+                     }else if(isEvenString(result[0]) && isEvenString($(this).data("current_number"))){
                         console.log("8");
                         if(occupied[result[0]] == 0){
                            $(this).css("background-color", "lightyellow");
@@ -245,10 +246,10 @@
                   current = 0;
                   $(this).prop("value", "0");
                }
-               if($(this).parent("div").data("current_number") == "1" || $(this).parent("div").data("current_number") == "3" || $(this).parent("div").data("current_number") == "5" || $(this).parent("div").data("current_number") == "7" || $(this).parent("div").data("current_number") == "9" || $(this).parent("div").data("current_number") == "11") {
+               if(isOddString($(this).parent("div").data("current_number"))) {
                   document.getElementById("leftWeight").value = parseFloat(document.getElementById("leftWeight").value) + parseFloat(current) - parseFloat(prev);
                }
-               if($(this).parent("div").data("current_number") == "2" || $(this).parent("div").data("current_number") == "4" || $(this).parent("div").data("current_number") == "6" || $(this).parent("div").data("current_number") == "8" || $(this).parent("div").data("current_number") == "10" || $(this).parent("div").data("current_number") == "12") {
+               if(isEvenString($(this).parent("div").data("current_number"))) {
                   document.getElementById("rightWeight").value = parseFloat(document.getElementById("rightWeight").value) + parseFloat(current) - parseFloat(prev);
                }
                $(this).parent("div").draggable( 'enable' );
@@ -373,6 +374,82 @@
 		    </div>
           <div class="blank"></div>
 		    <div class="squaredotted">12</div>
+          <div class="blank"></div>
+          <div class="square">
+		      <input style="width: 70px; margin-top: 5px;text-align: center;" placeholder="姓名"></input>
+		      <input style="width: 70px; margin-top: 5px;text-align: center;" type="text" id="weight_input" placeholder="體重"></input>
+		    </div>
+          <div style="clear:both"></div>
+          <div class="square">
+		      <input style="width: 70px; margin-top: 5px;text-align: center;" placeholder="姓名"></input>
+		      <input style="width: 70px; margin-top: 5px;text-align: center;" type="text" id="weight_input" placeholder="體重"></input>
+		    </div>
+          <div class="blank"></div>
+		    <div class="squaredotted">13</div>
+          <div class="blank"></div>
+          <div class="square">
+		      <input style="width: 70px; margin-top: 5px;text-align: center;" placeholder="姓名"></input>
+		      <input style="width: 70px; margin-top: 5px;text-align: center;" type="text" id="weight_input" placeholder="體重"></input>
+		    </div>
+          <div class="blank"></div>
+		    <div class="squaredotted">14</div>
+          <div class="blank"></div>
+          <div class="square">
+		      <input style="width: 70px; margin-top: 5px;text-align: center;" placeholder="姓名"></input>
+		      <input style="width: 70px; margin-top: 5px;text-align: center;" type="text" id="weight_input" placeholder="體重"></input>
+		    </div>
+          <div style="clear:both"></div>
+          <div class="square">
+		      <input style="width: 70px; margin-top: 5px;text-align: center;" placeholder="姓名"></input>
+		      <input style="width: 70px; margin-top: 5px;text-align: center;" type="text" id="weight_input" placeholder="體重"></input>
+		    </div>
+          <div class="blank"></div>
+		    <div class="squaredotted">15</div>
+          <div class="blank"></div>
+          <div class="square">
+		      <input style="width: 70px; margin-top: 5px;text-align: center;" placeholder="姓名"></input>
+		      <input style="width: 70px; margin-top: 5px;text-align: center;" type="text" id="weight_input" placeholder="體重"></input>
+		    </div>
+          <div class="blank"></div>
+		    <div class="squaredotted">16</div>
+          <div class="blank"></div>
+          <div class="square">
+		      <input style="width: 70px; margin-top: 5px;text-align: center;" placeholder="姓名"></input>
+		      <input style="width: 70px; margin-top: 5px;text-align: center;" type="text" id="weight_input" placeholder="體重"></input>
+		    </div>
+          <div style="clear:both"></div>
+          <div class="square">
+		      <input style="width: 70px; margin-top: 5px;text-align: center;" placeholder="姓名"></input>
+		      <input style="width: 70px; margin-top: 5px;text-align: center;" type="text" id="weight_input" placeholder="體重"></input>
+		    </div>
+          <div class="blank"></div>
+		    <div class="squaredotted">17</div>
+          <div class="blank"></div>
+          <div class="square">
+		      <input style="width: 70px; margin-top: 5px;text-align: center;" placeholder="姓名"></input>
+		      <input style="width: 70px; margin-top: 5px;text-align: center;" type="text" id="weight_input" placeholder="體重"></input>
+		    </div>
+          <div class="blank"></div>
+		    <div class="squaredotted">18</div>
+          <div class="blank"></div>
+          <div class="square">
+		      <input style="width: 70px; margin-top: 5px;text-align: center;" placeholder="姓名"></input>
+		      <input style="width: 70px; margin-top: 5px;text-align: center;" type="text" id="weight_input" placeholder="體重"></input>
+		    </div>
+          <div style="clear:both"></div>
+          <div class="square">
+		      <input style="width: 70px; margin-top: 5px;text-align: center;" placeholder="姓名"></input>
+		      <input style="width: 70px; margin-top: 5px;text-align: center;" type="text" id="weight_input" placeholder="體重"></input>
+		    </div>
+          <div class="blank"></div>
+		    <div class="squaredotted">19</div>
+          <div class="blank"></div>
+          <div class="square">
+		      <input style="width: 70px; margin-top: 5px;text-align: center;" placeholder="姓名"></input>
+		      <input style="width: 70px; margin-top: 5px;text-align: center;" type="text" id="weight_input" placeholder="體重"></input>
+		    </div>
+          <div class="blank"></div>
+		    <div class="squaredotted">20</div>
           <div class="blank"></div>
           <div class="square">
 		      <input style="width: 70px; margin-top: 5px;text-align: center;" placeholder="姓名"></input>
